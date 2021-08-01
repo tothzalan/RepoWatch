@@ -42,6 +42,7 @@
     .grid-container {
         display: inline-grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-flow: row;
     }
     .card {
         margin: 1rem;
@@ -72,6 +73,20 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+    }
+    @media (max-width: 1200px) {
+        html, body {
+            width: 95vw;
+        }
+        .grid-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (max-width: 800px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 </html>
