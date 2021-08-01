@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .User }}'s repos</title>
+</head>
+<body>
+    <div class="main-text">
+        {{ .User }}'s repos
+    </div>
+    <div class="grid-container">
+    {{ range $index, $element := .Data }}
+        <div class="card">
+            <div class="card-main">
+                <a href="https://github.com/{{ $element.FullName }}">{{ $element.Name }}</a>
+            </div>
+            <div class="card-description">{{ $element.Description }}</div>
+            <div class="card-stats">
+                <p>🌟: {{ $element.Stargazers }}</p>
+                <p>🔭: {{ $element.Watchers }}</p>
+                <p>🍴: {{ $element.Forks }}</p>
+            </div>
+        </div>
+    {{ end }}
+</body>
+<style>
+    html, body {
+        width: 70vw;
+        margin: 0 auto;
+        background-color: #393E46;
+        font-family: monospace;
+    }
+    .main-text {
+        color: #892CDC;
+        font-weight: 600;
+        font-size: 32px;
+        margin: 2rem;
+        text-align: center;
+    }
+    .grid-container {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .card {
+        margin: 1rem;
+        padding: 0.5rem;
+        background-color: #222831;
+        border-radius: 10px;
+        color: #BC6FF1;
+    }
+    .card div {
+        margin: 20px;
+    }
+    .card-main {
+        text-align: center;
+    }
+    .card-main a {
+        font-size: 20px;
+        color: #892CDC;
+        text-decoration: none;
+    }
+    .card-main a:hover {
+        transition-duration: 300ms;
+        color: white;
+    }
+    .card-description {
+        text-align: justify;
+    }
+    .card-stats {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+</style>
+</html>

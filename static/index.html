@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+</head>
+<body>
+    <h1 class="main-text">Serach a GitHub profile</h1>
+    <input class="input" id="textInput" type="text">
+    <button class="button" onclick="searchUser()">Search</button>
+<script>
+    function searchUser() {
+        let data = document.getElementById("textInput").value
+        window.open(`/users/${data}`)
+    }
+</script>
+</body>
+<style>
+html, body {
+    width: 70vw;
+    margin: 0 auto;
+    background-color: #393E46;
+    font-family: monospace;
+    text-align: center;
+}
+.main-text {
+    color: #892CDC;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 2rem;
+}
+.input {
+    font-size: 16px;
+}
+.button {
+    font-size: 16px;
+}
+</style>
+</html>
